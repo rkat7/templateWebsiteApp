@@ -30,13 +30,13 @@ const ACTIONS: Array<NavigationItem> = [
 		icon: <Icon className="mr-3" icon="feather:linkedin" />,
 		text: 'Linkedin',
 	},
-	{
-		type: NavigationItemType.LINK,
-		external: true,
-		href: 'https://github.com/rkat7',
-		icon: <Icon className="mr-3" icon="feather:github" />,
-		text: 'GitHub',
-	},
+	// {
+	// 	type: NavigationItemType.LINK,
+	// 	external: true,
+	// 	href: 'https://github.com/rkat7',
+	// 	icon: <Icon className="mr-3" icon="feather:github" />,
+	// 	text: 'GitHub',
+	// },
 ];
 
 export default function HomePage(): JSX.Element {
@@ -47,7 +47,7 @@ export default function HomePage(): JSX.Element {
 
 	const description = `I am a CS grad student & software developer`;
 
-	const description1 = `head over to the menu on the top-left!`;
+	const description1 = `pro tip: head over to the menu on the top-left!`;
 
 	return (
 		<Layout.Default>
@@ -61,7 +61,7 @@ export default function HomePage(): JSX.Element {
 							scale: [0.75, 1],
 						}}
 						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
-						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
+						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '} <br></br>
 						I&apos;m Rohith, <br className="hidden sm:block" />an{' '}
 						<Pill.Standard className="mt-4">engineer</Pill.Standard>
 					</Animate>
