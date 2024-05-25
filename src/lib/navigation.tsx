@@ -43,19 +43,29 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 	[
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:twitter',
-			text: 'Twitter',
-			href: 'https://twitter.com/nurodev',
-			external: true,
-		},
-		{
-			type: NavigationItemType.LINK,
 			icon: 'feather:github',
 			text: 'GitHub',
 			href: 'https://github.com/rkat7',
 			external: true,
 		},
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:bar-chart-2',
+			text: 'Codeforces',
+			href: 'https://codeforces.com/profile/rkat7',
+			external: true,
+		},
 	],
+	[
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:square',
+			text: 'View my Résumé',
+			href: 'https://dropbox.com',
+			external: true,
+		},
+
+	]
 ];
 
 export function useNavigation(): {
