@@ -47,7 +47,7 @@ export default function HomePage(): JSX.Element {
 
 	const description = `I am a CS grad student & software developer`;
 
-	const description1 = `pro tip: head over to the menu on the top-left!`;
+	const description1 = `pro tip: head over to the menu on the top-left`;
 
 	return (
 		<Layout.Default>
