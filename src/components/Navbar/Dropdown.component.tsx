@@ -81,7 +81,7 @@ const glowStyle = {
 
 export function Dropdown({ children, items, position = 'top-left' }: StandardProps): JSX.Element {
 	return (
-		<Menu as="div" className="relative inline-block text-left">
+		<Menu as="div" className="relative inline-block text-left" style={glowStyle}>
 			{({ open }): JSX.Element => (
 				<>
 					<Menu.Button as={Fragment}>{children}</Menu.Button>
