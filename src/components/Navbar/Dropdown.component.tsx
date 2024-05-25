@@ -53,10 +53,14 @@ function MenuButtonIcon({
 }: MenuButtonIconProps): JSX.Element {
 	if (typeof icon !== 'string') return <>{icon}</>;
 
-	if (type === 'right')
-		return <Icon aria-hidden="true" className={clsx('w-4 h-4 ml-3', className)} icon={icon} />;
+	const glowStyle = {
+		boxShadow: '0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.4)'
+	};
 
-	return <Icon aria-hidden="true" className={clsx('w-5 h-5 mr-3', className)} icon={icon} />;
+	if (type === 'right')
+		return <Icon aria-hidden="true" className={clsx('w-4 h-4 ml-3', className)} icon={icon} style={glowStyle} />;
+
+	return <Icon aria-hidden="true" className={clsx('w-5 h-5 mr-3', className)} icon={icon} style={glowStyle} />;
 }
 
 /**
