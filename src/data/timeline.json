@@ -68,9 +68,9 @@
 		"icon": "feather:book"
 	},
 	{
-		"date": "Sep-2000",
+		"date": "09-30-2000",
 		"title": "Birthday!",
-		"description": "I was born in the last week of september 2000",
+		"description": "Hello World, all the way!",
 		"icon": "feather:gift"
 	}
 ]
