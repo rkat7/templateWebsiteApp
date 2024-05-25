@@ -53,14 +53,10 @@ function MenuButtonIcon({
 }: MenuButtonIconProps): JSX.Element {
 	if (typeof icon !== 'string') return <>{icon}</>;
 
-	const glowStyle = {
-		boxShadow: '0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.4)'
-	};
-
 	if (type === 'right')
-		return <Icon aria-hidden="true" className={clsx('w-4 h-4 ml-3', className)} icon={icon} style={glowStyle} />;
+		return <Icon aria-hidden="true" className={clsx('w-4 h-4 ml-3', className)} icon={icon} />;
 
-	return <Icon aria-hidden="true" className={clsx('w-5 h-5 mr-3', className)} icon={icon} style={glowStyle} />;
+	return <Icon aria-hidden="true" className={clsx('w-5 h-5 mr-3', className)} icon={icon} />;
 }
 
 /**
@@ -78,9 +74,15 @@ function MenuLink({ children, href, onClick, ...rest }: MenuLinkProps): JSX.Elem
 	);
 }
 
+const glowStyle = {
+	boxShadow: '0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.4)'
+};
+
+
 export function Dropdown({ children, items, position = 'top-left' }: StandardProps): JSX.Element {
 	return (
 		<Menu as="div" className="relative inline-block text-left">
+			style={glowStyle}
 			{({ open }): JSX.Element => (
 				<>
 					<Menu.Button as={Fragment}>{children}</Menu.Button>
