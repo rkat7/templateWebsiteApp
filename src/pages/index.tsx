@@ -18,15 +18,17 @@ const Event = dynamic<EventProps>(
 const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
-		href: '/blog',
+		external: true,
+		href: 'https://blog-template-three.vercel.app/',
 		icon: <Icon className="mr-3" icon="feather:edit-3" />,
 		text: 'Blog',
 	},
 	{
 		type: NavigationItemType.LINK,
-		href: '/projects',
-		icon: <Icon className="mr-3" icon="feather:copy" />,
-		text: 'Projects',
+		external: true,
+		href: 'https://www.linkedin.com/in/rohithkattamuri-profile/',
+		icon: <Icon className="mr-3" icon="feather:linkedin" />,
+		text: 'Linkedin',
 	},
 	{
 		type: NavigationItemType.LINK,
@@ -43,7 +45,9 @@ export default function HomePage(): JSX.Element {
 	const isBirthday =
 		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
-	const description = `I am a cs grad student & software developer`;
+	const description = `I am a CS grad student & software developer`;
+
+	const description1 = `head over to the menu on the top-left!`;
 
 	return (
 		<Layout.Default>
@@ -73,6 +77,19 @@ export default function HomePage(): JSX.Element {
 							delay: 0.5,
 						}}>
 						{description}
+					</Animate>
+
+					<Animate
+						as="p"
+						animation={{
+							opacity: [0, 1],
+							scale: [0.50, 0.80],
+						}}
+						className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-400 sm:text-lg md:text-xl md:max-w-3xl"
+						transition={{
+							delay: 0.5,
+						}}>
+						{description1}
 					</Animate>
 
 					<div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full mt-8 sm:mt-4">
