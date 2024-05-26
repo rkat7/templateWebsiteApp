@@ -9,6 +9,7 @@ import RemarkCodeTitles from 'remark-code-titles';
 import RemarkEmoji from 'remark-emoji';
 import RemarkPrism from 'remark-prism';
 import RemarkSlug from 'remark-slug';
+import { Hashnode } from 'src/pages/blog/hashnode.types';
 
 import type { FrontMatter, Post, RawFrontMatter } from '~/types';
 
