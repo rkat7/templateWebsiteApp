@@ -21,12 +21,12 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			text: 'Timeline',
 			href: '/timeline',
 		},
-		// {
-		// 	type: NavigationItemType.LINK,
-		// 	icon: 'feather:edit-3',
-		// 	text: 'Blog',
-		// 	href: '/blog',
-		// },
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:edit-3',
+			text: 'Blog',
+			href: '/blog',
+		},
 		// {
 		// 	type: NavigationItemType.LINK,
 		// 	icon: 'feather:tool',
