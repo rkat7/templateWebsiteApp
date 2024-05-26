@@ -66,7 +66,7 @@ export default function BlogPage({ serialisedFrontmatters }: BlogProps): JSX.Ele
 
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ blog' }}>
-			<div class="container">
+			<div className="container">
 				{this.state.posts.map((post, index) => (
 					<a key={index} href={`https://thetechdeck.hashnode.dev/${post.slug}`} >
 						<Post post={post} />
