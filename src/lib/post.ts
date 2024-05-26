@@ -24,22 +24,26 @@ export async function getAllPostSlugs(): Promise<Array<string>> {
 
 const query = `
 	query Publication {
-		publication(host: "https://thetechdeck.hashnode.dev/") {
+		publication(host: "blog.developerdao.com") {
 		isTeam
 		title
 		posts(first: 50) {
 			edges {
 			node {
 				slug
-            	coverImage
 				title
 				brief
 				url
+				coverImage {
+					attribution
+					photographer
+				}
 			}
 			}
 		}
 		}
-	}`
+	}	
+	`
 	;
 
 const fetchPosts = async () => {
