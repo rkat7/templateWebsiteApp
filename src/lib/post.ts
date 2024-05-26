@@ -9,7 +9,6 @@ import RemarkCodeTitles from 'remark-code-titles';
 import RemarkEmoji from 'remark-emoji';
 import RemarkPrism from 'remark-prism';
 import RemarkSlug from 'remark-slug';
-import { Hashnode } from '~/components/hashnode.types';
 
 import type { FrontMatter, Post, RawFrontMatter } from '~/types';
 
@@ -25,56 +24,12 @@ export async function getAllPostSlugs(): Promise<Array<string>> {
 
 
 
-const query = `
-	query Publication {
-		publication(host: "blog.developerdao.com") {
-		title
-		posts(first: 15) {
-			edges {
-			node {
-				slug
-				title
-				brief
-				url
-				coverImage {
-				url
-				}
-			}
-			}
-		}
-		}
-	}
-	`
-	;
-
-const fetchPosts = async () => {
-	const response = await fetch('https://gql.hashnode.com', {
-		method: 'POST',
-		headers: {
-			'Content-type': 'application/json',
-		},
-		body: JSON.stringify({ query }),
-	})
-	const ApiResponse = await response.json();
-	return ApiResponse;
-
-};
-
-
 /**
  * Get the frontmatter metadata for all available blog posts
  */
 export async function getAllPostsFrontMatter(): Promise<Array<FrontMatter>> {
-	console.log("CHECK HERE BBB");
-	// console.error(fetchPosts);
-	console.log(fetchPosts.toString);
-	console.log(fetchPosts);
-	fetchPosts().then(x => x.map((k, v) => console.log("the values are", k.toString, v.toString)));
-	console.log("END IS HERE");
-	//console.log(fetchPosts().then(x => console.log(x)));
-	const files = readdirSync(BLOG_POSTS_DIR);
-	//fetchPosts();
 
+	const files = readdirSync(BLOG_POSTS_DIR);
 	return files
 		.map((slug) => {
 			const source = readFileSync(join(BLOG_POSTS_DIR, slug), 'utf8');
