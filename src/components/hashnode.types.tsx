@@ -12,9 +12,10 @@ export interface Hashnode {
             blog: {
                 Row: {
                     title: string | null
-                    coverImage: { url: string | null } | null
+                    coverImage: string | null
                     brief: string | null
                     slug: string | null
+                    imageUrl: string | null
                 }
                 Relationships: []
             },
