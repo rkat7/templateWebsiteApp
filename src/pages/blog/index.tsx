@@ -7,7 +7,7 @@ import React from "react";
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import { Hashnode } from './hashnode.types';
+import { Hashnode } from '../../components/hashnode.types';
 
 
 import type { GetStaticProps } from 'next';
