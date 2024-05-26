@@ -125,6 +125,18 @@ const blo = function Blog() {
 	};
 
 	return (
+		// <Layout.Default seo={{ title: 'nuro ─ blog' }}>
+		// 	<div className="mt-8 sm:mt-16 mb-20 mx-0 sm:mx-6 lg:mb-28 lg:mx-8">
+		// 		<div className="relative max-w-6xl mx-auto">
+		// 			{/* <Blog.Latest frontmatter={latestPost} /> */}
+		// 			<div className="mt-4 lg:mt-12 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-none">
+		// 				{posts.map((frontmatter, i) => (
+		// 					<Blog.Post key={i} frontmatter={frontmatter} index={i} />
+		// 				))}
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </Layout.Default>
 		<>
 			<h1 className="text-center items-center justify-center top-36 tracking-[20px] text-gray-500 text-3xl lg:text-4xl font-bold">Blogs</h1>
 			<section className="text-gray-300 body-font">
@@ -136,7 +148,7 @@ const blo = function Blog() {
 									<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
 										<Image
 											className="lg:h-48 md:h-36 w-full object-cover object-center"
-											src={c.coverImage.url || ''}
+											src={c.coverImage.map((k, v) => { return k }) || ''}
 											alt={c.slug || ''}
 											width={250}
 											height={250}
@@ -153,6 +165,7 @@ const blo = function Blog() {
 					</div>
 				</div>
 			</section>
+
 		</>
 	)
 };
