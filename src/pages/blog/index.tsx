@@ -3,7 +3,7 @@ import { getAllPostsFrontMatter } from '~/lib/post';
 import { Layout } from '~/layouts';
 
 import React from "react";
-import 'react-loading-skeleton/dist/skeleton.css'
+
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
