@@ -66,7 +66,8 @@ export async function getAllPostsFrontMatter(): Promise<Array<FrontMatter>> {
 	// console.error(fetchPosts);
 	console.log(fetchPosts.toString);
 	console.log(fetchPosts);
-	fetchPosts().then(x => console.log(x));
+	fetchPosts().then(x => x.map((k, v) => console.log("the values are", k.toString, v.toString)));
+	console.log("END IS HERE");
 	//console.log(fetchPosts().then(x => console.log(x)));
 	const files = readdirSync(BLOG_POSTS_DIR);
 	//fetchPosts();
