@@ -132,7 +132,7 @@ const blo = function Blog() {
 					<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 						{posts.map((c, index) => (
 							<div className="p-4 md:w-1/3" key={index}>
-								<a href={`https://thetechdeck.hashnode.dev//${c.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
+								<a href={`https://blog.developerdao.com//${c.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
 									<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
 										<Image
 											className="lg:h-48 md:h-36 w-full object-cover object-center"
