@@ -62,7 +62,7 @@ const fetchPosts = async () => {
 export async function getAllPostsFrontMatter(): Promise<Array<FrontMatter>> {
 	console.log("CHECK HERE BBB");
 	// console.error(fetchPosts);
-	// console.log(fetchPosts);
+	console.log(fetchPosts);
 	const files = readdirSync(BLOG_POSTS_DIR);
 	//fetchPosts();
 
