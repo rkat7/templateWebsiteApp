@@ -1,7 +1,6 @@
 import { Blog } from '~/components';
 import { getAllPostsFrontMatter } from '~/lib/post';
 import { Layout } from '~/layouts';
-import Post from './Post';
 
 import type { GetStaticProps } from 'next';
 
