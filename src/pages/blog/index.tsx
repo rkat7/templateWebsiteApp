@@ -13,12 +13,14 @@ interface BlogProps {
 
 const query = `
 	query Publication {
-		publication(host: "https://lldcoding.com/") {
+		publication(host: "https://thetechdeck.hashnode.dev/") {
 		isTeam
 		title
-		posts(first: 10) {
+		posts(first: 50) {
 			edges {
 			node {
+				slug
+            	coverImage
 				title
 				brief
 				url
@@ -44,7 +46,7 @@ const fetchPosts = async () => {
 
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-	const frontmatters = await fetchPosts();
+	const frontmatters = await getAllPostsFrontMatter();
 
 	return {
 		props: {
