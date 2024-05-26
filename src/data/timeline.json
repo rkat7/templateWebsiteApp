@@ -1,18 +1,18 @@
 [
 	{
-		"date": "26-08-2024",
+		"date": "08-26-2024",
 		"title": "Master's in CS",
 		"description": "Pursuing Master's in CS at the UIUC",
 		"icon": "feather:chevrons-up"
 	},
 	{
-		"date": "01-09-2021",
+		"date": "09-01-2021",
 		"title": "SWE job",
 		"description": "Began working as a swe at Target in Bangalore",
 		"icon": "feather:briefcase"
 	},
 	{
-		"date": "07-15-2020",
+		"date": "07-15-2021",
 		"title": "Graduated University!",
 		"description": "Successfully completed my Bachelor's Degree",
 		"icon": "feather:award"
@@ -24,7 +24,7 @@
 		"icon": "feather:code"
 	},
 	{
-		"date": "01-08-2020",
+		"date": "08-01-2020",
 		"title": "First Research Internship!",
 		"description": "Began my Research Internship at NTU Singapore",
 		"icon": "feather:globe",
@@ -34,7 +34,7 @@
 		}
 	},
 	{
-		"date": "01-08-2017",
+		"date": "08-01-2017",
 		"title": "Start University",
 		"description": "Stepped into SRM University AP to pursue Bachelor's in Computer Science",
 		"icon": "feather:book"
