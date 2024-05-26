@@ -23,6 +23,8 @@ export async function getAllPostSlugs(): Promise<Array<string>> {
 }
 
 
+
+
 const query = `
 	query Publication {
 		publication(host: "blog.developerdao.com") {
