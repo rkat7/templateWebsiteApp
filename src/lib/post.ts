@@ -21,11 +21,49 @@ export async function getAllPostSlugs(): Promise<Array<string>> {
 	return readdirSync(BLOG_POSTS_DIR);
 }
 
+
+const query = `
+	query Publication {
+		publication(host: "https://thetechdeck.hashnode.dev/") {
+		isTeam
+		title
+		posts(first: 50) {
+			edges {
+			node {
+				slug
+            	coverImage
+				title
+				brief
+				url
+			}
+			}
+		}
+		}
+	}`
+	;
+
+const fetchPosts = async () => {
+	const response = await fetch('https://gql.hashnode.com', {
+		method: 'POST',
+		headers: {
+			'Content-type': 'application/json',
+		},
+		body: JSON.stringify({ query }),
+	})
+	const ApiResponse = await response.json();
+	return ApiResponse;
+
+};
+
+
 /**
  * Get the frontmatter metadata for all available blog posts
  */
 export async function getAllPostsFrontMatter(): Promise<Array<FrontMatter>> {
+	console.error(fetchPosts);
+	console.log(fetchPosts);
 	const files = readdirSync(BLOG_POSTS_DIR);
+	//fetchPosts();
 
 	return files
 		.map((slug) => {
