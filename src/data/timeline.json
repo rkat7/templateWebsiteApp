@@ -1,39 +1,15 @@
 [
 	{
-		"date": "03-14-2022",
-		"title": "Started @ Wander",
-		"description": "Joined the Wander team",
-		"icon": "feather:briefcase",
-		"link": {
-			"text": "Visit Wander",
-			"url": "https://wander.com/"
-		}
+		"date": "26-08-2024",
+		"title": "Master's in CS",
+		"description": "Pursuing Master's in CS at the UIUC",
+		"icon": "feather:chevrons-up"
 	},
 	{
-		"date": "10-22-2021",
-		"title": "Launched nuro.dev",
-		"description": "Successfully launched my newly re-designed portfolio",
-		"icon": "feather:award"
-	},
-	{
-		"date": "03-15-2021",
-		"title": "Started @ Attio",
-		"description": "Joined the Attio team",
-		"icon": "feather:briefcase",
-		"link": {
-			"text": "Visit Attio",
-			"url": "https://attio.com/"
-		}
-	},
-	{
-		"date": "11-16-2020",
-		"title": "Started @ Aiming.pro",
-		"description": "Joined the Aiming.pro team",
-		"icon": "feather:briefcase",
-		"link": {
-			"text": "Visit Aiming.pro",
-			"url": "https://aiming.pro/"
-		}
+		"date": "01-09-2021",
+		"title": "SWE job",
+		"description": "Began working as a swe at Target in Bangalore",
+		"icon": "feather:briefcase"
 	},
 	{
 		"date": "07-15-2020",
@@ -42,29 +18,25 @@
 		"icon": "feather:award"
 	},
 	{
-		"date": "10-11-2018",
-		"title": "First Developer Role",
-		"description": "Began an internship as a junior developer working at Stink Studios",
-		"icon": "feather:briefcase",
+		"date": "01-01-2021",
+		"title": "First SDE Internship!",
+		"description": "Amadeus Labs - my first exposure to the tech industry",
+		"icon": "feather:code"
+	},
+	{
+		"date": "01-08-2020",
+		"title": "First Research Internship!",
+		"description": "Began my Research Internship at NTU Singapore",
+		"icon": "feather:globe",
 		"link": {
-			"text": "Visit Stink Studios",
-			"url": "https://stinkstudios.com/"
+			"text": "About",
+			"url": "https://srmap.edu.in/seas/computer-science-engineering/research-internships/"
 		}
 	},
 	{
-		"date": "11-04-2016",
-		"title": "First Job!",
-		"description": "Began my first part-time job as a junior service desk analyist at CreeperHost",
-		"icon": "feather:briefcase",
-		"link": {
-			"text": "Visit CreeperHost",
-			"url": "http://creeperhost.net/"
-		}
-	},
-	{
-		"date": "09-10-2016",
+		"date": "01-08-2017",
 		"title": "Start University",
-		"description": "Began studying Computer Games Programming at Staffordshire University",
+		"description": "Stepped into SRM University AP to pursue Bachelor's in Computer Science",
 		"icon": "feather:book"
 	},
 	{

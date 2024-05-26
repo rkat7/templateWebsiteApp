@@ -55,6 +55,14 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			href: 'https://codeforces.com/profile/rkat7',
 			external: true,
 		},
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:layers',
+			text: 'Stack Overflow',
+			href: 'https://stackoverflow.com/users/22046747/rohith-k',
+			external: true,
+		},
+
 	],
 	[
 		{
