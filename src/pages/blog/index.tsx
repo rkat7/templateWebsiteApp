@@ -10,8 +10,41 @@ interface BlogProps {
 	serialisedFrontmatters: string;
 }
 
+
+const query = `
+	query Publication {
+		publication(host: "https://lldcoding.com/") {
+		isTeam
+		title
+		posts(first: 10) {
+			edges {
+			node {
+				title
+				brief
+				url
+			}
+			}
+		}
+		}
+	}`
+	;
+
+const fetchPosts = async () => {
+	const response = await fetch('https://gql.hashnode.com', {
+		method: 'POST',
+		headers: {
+			'Content-type': 'application/json',
+		},
+		body: JSON.stringify({ query }),
+	})
+	const ApiResponse = await response.json();
+	return ApiResponse;
+
+};
+
+
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-	const frontmatters = await getAllPostsFrontMatter();
+	const frontmatters = await fetchPosts();
 
 	return {
 		props: {
