@@ -46,7 +46,7 @@ const fetchPosts = async () => {
 
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-	const frontmatters = await getAllPostsFrontMatter();
+	const frontmatters = await fetchPosts();
 
 	return {
 		props: {
