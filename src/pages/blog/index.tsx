@@ -121,6 +121,9 @@ const blo = function Blog() {
 			body: JSON.stringify({ query }),
 		});
 		const result = await response.json();
+		result.publication.posts.edges.forEach(post => {
+			post.node.imageUrl = post.coverImage.url;
+		});
 		setPosts(result.data.publication.posts.edges);
 	};
 
@@ -148,7 +151,7 @@ const blo = function Blog() {
 									<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
 										<Image
 											className="lg:h-48 md:h-36 w-full object-cover object-center"
-											src={c.coverImage.map((k, v) => { return k }) || ''}
+											src={c.imageUrl || ''}
 											alt={c.slug || ''}
 											width={250}
 											height={250}
