@@ -17,28 +17,28 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 		},
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:edit-3',
-			text: 'Blog',
-			href: '/blog',
-		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:copy',
-			text: 'Projects',
-			href: '/projects',
-		},
-		{
-			type: NavigationItemType.LINK,
 			icon: 'feather:clock',
 			text: 'Timeline',
 			href: '/timeline',
 		},
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:link',
-			text: 'Referrals',
-			href: '/referrals',
+			icon: 'feather:edit-3',
+			text: 'Blog',
+			href: '/blog',
 		},
+		// {
+		// 	type: NavigationItemType.LINK,
+		// 	icon: 'feather:tool',
+		// 	text: 'Skills',
+		// 	href: '/projects',
+		// },
+		// {
+		// 	type: NavigationItemType.LINK,
+		// 	icon: 'feather:link',
+		// 	text: 'Referrals',
+		// 	href: '/referrals',
+		// },
 	],
 	[
 		{
@@ -55,11 +55,19 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			href: 'https://codeforces.com/profile/rkat7',
 			external: true,
 		},
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:layers',
+			text: 'Stack Overflow',
+			href: 'https://stackoverflow.com/users/22046747/rohith-k',
+			external: true,
+		},
+
 	],
 	[
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:square',
+			icon: 'feather:paperclip',
 			text: 'View my Résumé',
 			href: 'https://dropbox.com',
 			external: true,

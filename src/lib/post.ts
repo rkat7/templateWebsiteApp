@@ -21,12 +21,15 @@ export async function getAllPostSlugs(): Promise<Array<string>> {
 	return readdirSync(BLOG_POSTS_DIR);
 }
 
+
+
+
 /**
  * Get the frontmatter metadata for all available blog posts
  */
 export async function getAllPostsFrontMatter(): Promise<Array<FrontMatter>> {
-	const files = readdirSync(BLOG_POSTS_DIR);
 
+	const files = readdirSync(BLOG_POSTS_DIR);
 	return files
 		.map((slug) => {
 			const source = readFileSync(join(BLOG_POSTS_DIR, slug), 'utf8');
