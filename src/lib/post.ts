@@ -25,9 +25,8 @@ export async function getAllPostSlugs(): Promise<Array<string>> {
 const query = `
 	query Publication {
 		publication(host: "blog.developerdao.com") {
-		isTeam
 		title
-		posts(first: 50) {
+		posts(first: 15) {
 			edges {
 			node {
 				slug
@@ -35,14 +34,13 @@ const query = `
 				brief
 				url
 				coverImage {
-					attribution
-					photographer
+				url
 				}
 			}
 			}
 		}
 		}
-	}	
+	}
 	`
 	;
 
