@@ -92,22 +92,23 @@ const blo = function Blog() {
 	// just change the username to yours and you are good to go
 	const query = `
 	query Publication {
-		publication(host: "https://thetechdeck.hashnode.dev/") {
-		isTeam
-		title
-		posts(first: 50) {
+		publication(host: "blog.developerdao.com") {
+		  title
+		  posts(first: 15) {
 			edges {
-			node {
+			  node {
 				slug
-            	coverImage
 				title
 				brief
 				url
+				coverImage {
+				  url
+				}
+			  }
 			}
-			}
+		  }
 		}
-		}
-	}`;
+	  }`;
 	useEffect(() => {
 		fetchPosts();
 	}, []);
