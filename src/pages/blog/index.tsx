@@ -160,6 +160,8 @@ const blo = function Blog() {
 							console.log("HERE");
 							console.log(c.coverImage.url);
 							const key = c.coverImage.url;
+							console.log(key);
+							console.log("END THE LOG");
 							// const { url } = c.coverImage.url;
 							return (
 								<div className="p-4 md:w-1/3" key={index}>
@@ -167,7 +169,7 @@ const blo = function Blog() {
 										<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
 											<Image
 												className="lg:h-48 md:h-36 w-full object-cover object-center"
-												src={key || ''}
+												src={c.coverImage || ''}
 												alt={c.slug || ''}
 												width={250}
 												height={250}
