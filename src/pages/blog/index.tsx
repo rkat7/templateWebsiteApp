@@ -194,6 +194,9 @@ const blo = function Blog() {
 				<div className="container px-5 py-24 mx-auto">
 					<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 						{posts?.map((c, index) => {
+							console.log("lets log posts");
+							console.log(posts);
+							console.log(posts.toString);
 
 							//const key = JSON.stringify(c?.coverImage?.url);
 							const { slug, title, brief, coverImage } = c;
