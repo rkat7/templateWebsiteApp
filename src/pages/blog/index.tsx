@@ -159,7 +159,7 @@ const blo = function Blog() {
 							console.log("HERE");
 							console.log(c.coverImage.url);
 							const key = c.coverImage.url;
-							const { url } = c.coverImage.url;
+							// const { url } = c.coverImage.url;
 							return (
 								<div className="p-4 md:w-1/3" key={index}>
 									<a href={`https://blog.developerdao.com//${c.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
