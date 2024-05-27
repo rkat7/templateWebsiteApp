@@ -169,7 +169,7 @@ const blo = function Blog() {
 										<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
 											<Image
 												className="lg:h-48 md:h-36 w-full object-cover object-center"
-												src={c.key || ''}
+												src={key || ''}
 												alt={c.slug || ''}
 												width={250}
 												height={250}
