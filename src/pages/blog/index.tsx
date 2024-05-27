@@ -197,6 +197,12 @@ const blo = function Blog() {
 
 							//const key = JSON.stringify(c?.coverImage?.url);
 							const { slug, title, brief, coverImage } = c;
+							console.log(c.toString);
+							console.log(c.toString);
+							console.log(slug);
+							console.log("slug");
+							console.log(coverImage);
+							console.log("coverImage");
 
 							console.log("END THE LOG");
 							// const { url } = c.coverImage.url;
