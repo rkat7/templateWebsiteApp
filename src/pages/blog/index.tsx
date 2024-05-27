@@ -136,7 +136,7 @@ const blo = function Blog() {
 	};
 	return (
 		<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
-			{posts.map((post, index) => {
+			{posts?.map((post, index) => {
 				const { slug, title, brief, coverImage } = post;
 
 				return (
@@ -150,7 +150,7 @@ const blo = function Blog() {
 							<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
 								<Image
 									className="lg:h-48 md:h-36 w-full object-cover object-center"
-									src={coverImage.url}
+									src={coverImage?.url}
 									alt={title}
 									width={250}
 									height={250}
