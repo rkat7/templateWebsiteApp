@@ -109,6 +109,7 @@ const blo = function Blog() {
 		  }
 		}
 	  }`;
+
 	useEffect(() => {
 		fetchPosts();
 	}, []);
@@ -121,14 +122,15 @@ const blo = function Blog() {
 			body: JSON.stringify({ query }),
 		});
 		const result = await response.json();
-		result.publication.posts.edges.forEach(post => {
-			post.node.imageUrl = post.coverImage.url;
-			console.log("has it changed");
-			console.log(post);
-		});
+		// result.publication.posts.edges.forEach(post => {
+		// 	post.node.imageUrl = post.coverImage.url;
+		// 	console.log("has it changed");
+		// 	console.log(post);
+		// });
 
 		setPosts(result.data.publication.posts.edges);
 	};
+
 
 	return (
 		// <Layout.Default seo={{ title: 'nuro ─ blog' }}>
@@ -143,31 +145,35 @@ const blo = function Blog() {
 		// 		</div>
 		// 	</div>
 		// </Layout.Default>
+
 		<>
 			<h1 className="text-center items-center justify-center top-36 tracking-[20px] text-gray-500 text-3xl lg:text-4xl font-bold">Blogs</h1>
 			<section className="text-gray-300 body-font">
 				<div className="container px-5 py-24 mx-auto">
 					<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
-						{posts.map((c, index) => (
-							<div className="p-4 md:w-1/3" key={index}>
-								<a href={`https://blog.developerdao.com//${c.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
-									<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
-										<Image
-											className="lg:h-48 md:h-36 w-full object-cover object-center"
-											src={c.imageUrl || ''}
-											alt={c.slug || ''}
-											width={250}
-											height={250}
-										/>
-										<div className="p-6">
-											<h1 className="title-font text-lg font-medium text-gray-300 mb-3">
-												{c.title || ''}</h1>
-											<p className="leading-relaxed text-gray-500 mb-3">{c.brief || ''}</p>
+						{posts.map((c, index) => {
+							const { imageUrl } = c.coverImage.url;
+							return (
+								<div className="p-4 md:w-1/3" key={index}>
+									<a href={`https://blog.developerdao.com//${c.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
+										<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
+											<Image
+												className="lg:h-48 md:h-36 w-full object-cover object-center"
+												src={imageUrl || ''}
+												alt={c.slug || ''}
+												width={250}
+												height={250}
+											/>
+											<div className="p-6">
+												<h1 className="title-font text-lg font-medium text-gray-300 mb-3">
+													{c.title || ''}</h1>
+												<p className="leading-relaxed text-gray-500 mb-3">{c.brief || ''}</p>
+											</div>
 										</div>
-									</div>
-								</a>
-							</div>
-						))}
+									</a>
+								</div>
+							)
+						})}
 					</div>
 				</div>
 			</section>
