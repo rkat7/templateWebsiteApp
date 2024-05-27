@@ -86,6 +86,9 @@ interface BlogProps {
 // 	);
 //}
 
+
+
+
 const blo = function Blog() {
 	// Added schema of Api querry to get the data from hashnode.
 	const [posts, setPosts] = useState<Hashnode['public']['Tables']['blog']['Row'][]>([]);
