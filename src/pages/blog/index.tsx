@@ -157,10 +157,9 @@ const blo = function Blog() {
 				<div className="container px-5 py-24 mx-auto">
 					<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 						{posts.map((c, index) => {
-							console.log("HERE");
-							console.log(c.coverImage.url);
+
 							const key = JSON.stringify(c.coverImage.url);
-							console.log(key);
+
 							console.log("END THE LOG");
 							// const { url } = c.coverImage.url;
 							return (
