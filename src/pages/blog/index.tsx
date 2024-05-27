@@ -150,6 +150,7 @@ const blo = function Blog() {
 		// 	</div>
 		// </Layout.Default>
 
+
 		<>
 			<h1 className="text-center items-center justify-center top-36 tracking-[20px] text-gray-500 text-3xl lg:text-4xl font-bold">Blogs</h1>
 			<section className="text-gray-300 body-font">
