@@ -137,7 +137,7 @@ const blo = function Blog() {
 	return (
 		<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 			{posts.map((post, index) => {
-				const { slug, title, brief, coverImage } = post.node;
+				const { slug, title, brief, coverImage } = post;
 
 				return (
 					<div className="p-4 md:w-1/3" key={index}>
