@@ -109,6 +109,7 @@ const blo = function Blog() {
 		  }
 		}
 	  }`;
+
 	useEffect(() => {
 		fetchPosts();
 	}, []);
@@ -130,6 +131,7 @@ const blo = function Blog() {
 		setPosts(result.data.publication.posts.edges);
 	};
 
+
 	return (
 		// <Layout.Default seo={{ title: 'nuro ─ blog' }}>
 		// 	<div className="mt-8 sm:mt-16 mb-20 mx-0 sm:mx-6 lg:mb-28 lg:mx-8">
@@ -143,6 +145,7 @@ const blo = function Blog() {
 		// 		</div>
 		// 	</div>
 		// </Layout.Default>
+
 		<>
 			<h1 className="text-center items-center justify-center top-36 tracking-[20px] text-gray-500 text-3xl lg:text-4xl font-bold">Blogs</h1>
 			<section className="text-gray-300 body-font">
