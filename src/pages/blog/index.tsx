@@ -122,11 +122,11 @@ const blo = function Blog() {
 			body: JSON.stringify({ query }),
 		});
 		const result = await response.json();
-		result.publication.posts.edges.forEach(post => {
-			post.node.imageUrl = post.coverImage.url;
-			console.log("has it changed");
-			console.log(post);
-		});
+		// result.publication.posts.edges.forEach(post => {
+		// 	post.node.imageUrl = post.coverImage.url;
+		// 	console.log("has it changed");
+		// 	console.log(post);
+		// });
 
 		setPosts(result.data.publication.posts.edges);
 	};
@@ -152,7 +152,7 @@ const blo = function Blog() {
 				<div className="container px-5 py-24 mx-auto">
 					<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 						{posts.map((c, index) => {
-							const { imageUrl } = c.coverImage;
+							const { imageUrl } = c.coverImage.url;
 							return (
 								<div className="p-4 md:w-1/3" key={index}>
 									<a href={`https://blog.developerdao.com//${c.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
