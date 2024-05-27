@@ -127,6 +127,7 @@ const blo = function Blog() {
 		// 	console.log("has it changed");
 		// 	console.log(post);
 		// });
+		console.log(result.toString);
 
 		setPosts(result.data.publication.posts.edges);
 	};
