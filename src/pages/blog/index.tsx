@@ -130,7 +130,17 @@ const blo = function Blog() {
 							console.log(post[0]?.slug);
 							console.log(post[0]?.coverImage?.url);
 							console.log(post[0]?.title);
-							console.log(post[0]?.slug);
+
+
+							console.log("plural works?");
+							console.log(posts[0]?.slug);
+							console.log(posts[0]?.coverImage?.url);
+							console.log(posts[0]?.title);
+
+							console.log("mixxxxxxxxxxxx");
+							console.log(posts[0]?.node?.slug);
+							console.log(post[0]?.node?.slug);
+							console.log(post?.node?.slug);
 
 
 							console.log("END THE LOG");
