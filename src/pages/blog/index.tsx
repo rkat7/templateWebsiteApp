@@ -127,10 +127,11 @@ const blo = function Blog() {
 						{posts?.map((post) => {
 							console.log("lets log posts");
 							console.log(posts);
-							console.log(post.slug);
-							console.log(post.coverImage.url);
-							console.log(post.title);
-							console.log(post.slug);
+							console.log(posts.type);
+							console.log(post[0]?.slug);
+							console.log(post[0]?.coverImage?.url);
+							console.log(post[0]?.title);
+							console.log(post[0]?.slug);
 
 
 							console.log("END THE LOG");
