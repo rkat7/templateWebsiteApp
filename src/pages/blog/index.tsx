@@ -138,7 +138,7 @@ const blo = function Blog() {
 							console.log(posts[0]?.title);
 
 							console.log("mixxxxxxxxxxxx");
-							console.log(posts[0]?.node?.slug);
+							//console.log(posts[0]?.node?.slug);
 							console.log(post[0]?.node?.slug);
 							console.log(post?.node?.slug);
 
