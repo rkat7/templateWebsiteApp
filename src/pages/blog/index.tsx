@@ -193,37 +193,28 @@ const blo = function Blog() {
 			<section className="text-gray-300 body-font">
 				<div className="container px-5 py-24 mx-auto">
 					<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
-						{posts?.map((c, index) => {
+						{posts?.map((post) => {
 							console.log("lets log posts");
 							console.log(posts);
-							console.log(posts.toString);
 
-							//const key = JSON.stringify(c?.coverImage?.url);
-							const { slug, title, brief, coverImage } = c;
-							console.log(c.toString);
-							console.log(c.toString);
-							console.log(slug);
-							console.log("slug");
-							console.log(coverImage);
-							console.log("coverImage");
 
 							console.log("END THE LOG");
-							// const { url } = c.coverImage.url;
+
 							return (
-								<div className="p-4 md:w-1/3" key={index}>
-									<a href={`https://blog.developerdao.com//${c.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
+								<div className="p-4 md:w-1/3" key={post.slug}>
+									<a href={`https://blog.developerdao.com//${post.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
 										<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
 											<Image
 												className="lg:h-48 md:h-36 w-full object-cover object-center"
-												src={coverImage?.url || ''}
-												alt={c.slug || ''}
+												src={post.coverImage?.url || ''}
+												alt={post.slug || ''}
 												width={250}
 												height={250}
 											/>
 											<div className="p-6">
 												<h1 className="title-font text-lg font-medium text-gray-300 mb-3">
-													{c.title || ''}</h1>
-												<p className="leading-relaxed text-gray-500 mb-3">{c.brief || ''}</p>
+													{post.title || ''}</h1>
+												<p className="leading-relaxed text-gray-500 mb-3">{post.brief || ''}</p>
 											</div>
 										</div>
 									</a>
