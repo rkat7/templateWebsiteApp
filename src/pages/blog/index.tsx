@@ -140,7 +140,7 @@ const blo = function Blog() {
 							console.log("mixxxxxxxxxxxx");
 							//console.log(posts[0]?.node?.slug);
 							console.log(post[0]?.node?.slug);
-							console.log(post?.node?.slug);
+							//console.log(post?.node?.slug);
 
 
 							console.log("END THE LOG");
