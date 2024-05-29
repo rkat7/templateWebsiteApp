@@ -124,7 +124,7 @@ const blo = function Blog() {
 			<section className="text-gray-300 body-font">
 				<div className="container px-5 py-24 mx-auto">
 					<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
-						{posts?.map((post) => {
+						{posts?.map((post, i) => {
 							console.log("lets log posts");
 							console.log(posts);
 							console.log(post[0]?.slug);
@@ -140,13 +140,14 @@ const blo = function Blog() {
 							console.log("mixxxxxxxxxxxx");
 							//console.log(posts[0]?.node?.slug);
 							console.log(post[0]?.node?.slug);
+
 							//console.log(post?.node?.slug);
 
 
 							console.log("END THE LOG");
 
 							return (
-								<div className="p-4 md:w-1/3" key={post.slug}>
+								<div className="p-4 md:w-1/3" key={i}>
 									<a href={`https://blog.developerdao.com//${post.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
 										<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
 											<Image
