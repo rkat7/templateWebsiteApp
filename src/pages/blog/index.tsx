@@ -120,21 +120,19 @@ const blo = function Blog() {
 							<div className="p-4 md:w-1/3" key={i}>
 								<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
 									<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110">
-										<Image
-											className="lg:h-48 md:h-36 w-full object-cover object-center"
-											src={post[keyed]?.coverImage?.url || ''}
-											alt={post[keyed]?.slug || ''}
-											width={250}
-											height={250}
-										/>
-										<div className="p-6">
-											<h1 className="title-font text-lg font-medium text-gray-300 mb-3">
+										<div className="p-5 bg-white border border-gray-300 rounded-lg">
+											<h2 className="text-xl font-bold text-gray-800 flex items-center mb-3">
+												<svg className="w-6 h-6 text-blue-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+													<path d="M13 7H7v6h6V7z" />
+													<path fillRule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 1h10a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z" clipRule="evenodd" />
+												</svg>
 												{post[keyed]?.title || ''}
-											</h1>
-											<p className="leading-relaxed text-gray-500 mb-3">
+											</h2>
+											<p className="text-gray-700">
 												{post[keyed]?.brief || ''}
 											</p>
 										</div>
+
 									</div>
 								</a>
 							</div>
@@ -149,3 +147,17 @@ const blo = function Blog() {
 
 
 export default blo;
+
+
+
+
+/*
+<div className="p-6">
+											<h1 className="title-font text-lg font-medium text-gray-300 mb-3">
+												{post[keyed]?.title || ''}
+											</h1>
+											<p className="leading-relaxed text-gray-500 mb-3">
+												{post[keyed]?.brief || ''}
+											</p>
+										</div>
+*/ 
