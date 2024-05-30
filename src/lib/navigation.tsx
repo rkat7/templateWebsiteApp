@@ -68,7 +68,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 		{
 			type: NavigationItemType.LINK,
 			icon: 'feather:paperclip',
-			text: 'View my Résumé',
+			text: 'My Résumé',
 			href: 'https://dropbox.com',
 			external: true,
 		},

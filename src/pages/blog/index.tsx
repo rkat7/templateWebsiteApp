@@ -120,16 +120,14 @@ const blo = function Blog() {
 							<div className="p-4 md:w-1/3" key={i}>
 								<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
 									<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110">
-										<div className="p-8 bg-white rounded-lg shadow-md">
-											<h3 className="text-xl font-medium text-black mb-3">
+										<div className="p-4 bg-gray-800 rounded-lg">
+											<h2 className="text-xl font-bold text-white mb-2">
 												{post[keyed]?.title || ''}
-											</h3>
-											<p className="text-base text-gray-700 mb-5">
+											</h2>
+											<p className="text-sm text-gray-400 mb-4">
 												{post[keyed]?.brief || ''}
 											</p>
-											<button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-												Read More
-											</button>
+											<a href="#" className="text-blue-500 hover:underline">Read more</a>
 										</div>
 
 									</div>
