@@ -125,6 +125,7 @@ const blo = function Blog() {
 				<div className="container px-5 py-24 mx-auto">
 					<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 						{posts?.map((post) => {
+							console.log(post);
 							// console.log("lets log posts");
 							// console.log(posts);
 							// console.log(post[0]?.slug);
@@ -148,7 +149,7 @@ const blo = function Blog() {
 							console.log("watch out  below");
 							{
 								console.log("watch out here");
-								post.map(i => console.log(i));
+								//post.map(i => console.log(i));
 
 								return (
 									<div className="p-4 md:w-1/3" key={posts[0]}>
