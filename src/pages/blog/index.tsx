@@ -150,27 +150,31 @@ const blo = function Blog() {
 							{
 								console.log("watch out here");
 								//post.map(i => console.log(i));
+								Object.keys(post).map((key, i) => {
 
-								return (
-									<div className="p-4 md:w-1/3" key={post?.slug}>
-										<a href={`https://blog.developerdao.com//${post.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
-											<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
-												<Image
-													className="lg:h-48 md:h-36 w-full object-cover object-center"
-													src={post?.coverImage?.url || ''}
-													alt={post?.slug || ''}
-													width={250}
-													height={250}
-												/>
-												<div className="p-6">
-													<h1 className="title-font text-lg font-medium text-gray-300 mb-3">
-														{post?.title || ''}</h1>
-													<p className="leading-relaxed text-gray-500 mb-3">{post?.brief || ''}</p>
+
+
+									return (
+										<div className="p-4 md:w-1/3" key={post[key]?.slug}>
+											<a href={`https://blog.developerdao.com//${post[key].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
+												<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
+													<Image
+														className="lg:h-48 md:h-36 w-full object-cover object-center"
+														src={post[key]?.coverImage?.url || ''}
+														alt={post[key]?.slug || ''}
+														width={250}
+														height={250}
+													/>
+													<div className="p-6">
+														<h1 className="title-font text-lg font-medium text-gray-300 mb-3">
+															{post[key]?.title || ''}</h1>
+														<p className="leading-relaxed text-gray-500 mb-3">{post[key]?.brief || ''}</p>
+													</div>
 												</div>
-											</div>
-										</a>
-									</div>
-								)
+											</a>
+										</div>
+									)
+								})
 							}
 						})}
 					</div>
