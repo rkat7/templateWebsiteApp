@@ -151,6 +151,10 @@ const blo = function Blog() {
 								console.log("watch out here");
 								//post.map(i => console.log(i));
 								Object.keys(post).map((key, i) => {
+									console.log(post[key].slug);
+									console.log(post[key].coverImage);
+									console.log(post[key].title);
+									console.log(post[key].brief);
 
 
 
