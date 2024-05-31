@@ -73,6 +73,15 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			external: true,
 		},
 
+	],
+	[
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:at-sign',
+			text: 'Reach me',
+			href: '/contact',
+		},
+
 	]
 ];
 

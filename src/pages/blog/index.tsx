@@ -112,7 +112,7 @@ const blo = function Blog() {
 
 
 	return (
-		<Layout.Default seo={{ title: 'blog by rohith' }} >
+		<Layout.Default seo={{ title: 'a blog by rohith' }} >
 			<div className="container px-5 py-24 mx-auto">
 				<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 					{posts?.map((post, kkk) => (
@@ -127,7 +127,7 @@ const blo = function Blog() {
 											<p className="text-sm text-gray-400 mb-4">
 												{post[keyed]?.brief || ''}
 											</p>
-											<a href="#" className="text-blue-500 hover:underline">Read more</a>
+											<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="text-blue-500 hover:underline">Read more</a>
 										</div>
 
 									</div>
