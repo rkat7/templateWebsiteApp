@@ -5,25 +5,26 @@ const contact: React.FC = () => {
     return (
         <Layout.Default seo={{ title: 'Get in touch' }} >
 
-            <div className="flex flex-col items-center justify-center min-h-screen py-6 sm:py-12">
-                <div className="bg-transparent p-6 rounded-lg shadow-lg max-w-md w-full text-center border border-gray-200">
-                    <h1 className="text-2xl font-bold mb-6 text-white-800">Get in Touch</h1>
+            <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-6 sm:py-12">
+                <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
+                    <h1 className="text-2xl font-bold mb-4">Get in Touch</h1>
 
-                    <div className="mb-4">
-                        <p className="text-white-700 mb-2">I respond quick to emails</p>
-                        <a href="mailto:kskrohith@gmail.com">
-                            <button>
-                                Email Me
-                            </button>
+                    <div className="mb-6">
+                        <p className="text-gray-700 mb-2">Mail me here:</p>
+                        <a href="mailto:kskrohith@gmail.com" className="text-blue-500 hover:underline">
+                            your-email@example.com
                         </a>
                     </div>
 
                     <div>
-                        <p className="text-white-700 mb-2">Two clicks away from a tête-à-tête</p>
-                        <a href="https://calendly.com/kskrohith" target="_blank" rel="noopener noreferrer">
-                            <button>
-                                Schedule a Call
-                            </button>
+                        <p className="text-gray-700 mb-2">Two clicks away from a tête-à-tête</p>
+                        <a
+                            href="https://calendly.com/kskrohith"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 hover:underline"
+                        >
+                            Schedule a Call
                         </a>
                     </div>
                 </div>
