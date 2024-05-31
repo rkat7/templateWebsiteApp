@@ -4,8 +4,8 @@ import { Layout } from '~/layouts';
 const contact: React.FC = () => {
     return (
         <Layout.Default seo={{ title: 'Get in touch' }} >
-            <div className="relative flex flex-col items-center justify-center min-h-screen py-12 bg-gray-100">
-                <div className="relative p-8 rounded-lg max-w-md w-full text-center z-10 shadow-md">
+            <div className="relative flex flex-col items-center justify-center min-h-screen py-12">
+                <div className="relative p-8 rounded-lg max-w-md w-full text-center z-10">
                     <h1 className="text-3xl font-bold mb-6 text-gray-800">Get in Touch</h1>
 
                     <div className="mb-8">
