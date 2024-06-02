@@ -159,13 +159,12 @@ const blo = function Blog() {
 							opacity: [0, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-6xl font-extrabold text-indigo-900 mb-12" style={{ fontFamily: 'sans-serif' }}
+						className="text-6xl font-extrabold text-gray-685 mb-12" style={{ fontFamily: 'sans-serif', fontStyle: 'italic' }}
 						transition={{
-							delay: 0.5,
+							delay: 1.25,
 						}}>
 						Bleed Code
 					</Animate>
-			  <h1 className="text-6xl font-extrabold text-indigo-900 mb-12" style={{ fontFamily: 'sans-serif' }}>Bleed Code</h1>
 			</div>
 			<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 			  {posts?.map((post, kkk) => (
