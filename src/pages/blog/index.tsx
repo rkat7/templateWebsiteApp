@@ -150,20 +150,20 @@ const blo = function Blog() {
 	//   );
 
 	return (
-		<Layout.Default seo={{ title: 'a blog by rohith' }}>
+		<Layout.Default seo={{ title: 'Blog by rohith' }}>
 		  <div className="container px-5 py-24 mx-auto">
 			<div className="text-center mb-12">
 			<Animate
 						as="h1"
 						animation={{
-							opacity: [0, 1],
+							opacity: [0.2, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-6xl font-extrabold text-gray-685 mb-12" style={{ fontFamily: 'sans-serif', fontStyle: 'italic' }}
+						className="text-4xl text-gray-685 mb-12" style={{ fontStyle: 'italic' }}
 						transition={{
-							delay: 1.25,
+							delay: 1.05,
 						}}>
-						Bleed Code
+						Engineering - the crème de la crème among the arts
 					</Animate>
 			</div>
 			<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
