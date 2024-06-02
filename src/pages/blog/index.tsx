@@ -28,7 +28,7 @@ const blo = function Blog() {
 	query Publication {
 		publication(host: "blog.developerdao.com") {
 		  title
-		  posts(first: 15) {
+		  posts(first: 8) {
 			edges {
 			  node {
 				slug
@@ -121,7 +121,7 @@ const blo = function Blog() {
 								<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
 									<div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transform transition-all hover:scale-110">
 										<div className="p-4 rounded-lg" style={{ backgroundColor: 'transparent', border: 'none !important' }}>
-											<h2 className="text-xl font-bold text-white mb-2">
+											<h2 className="text-xl font-bold text-indigo-900 mb-2">
 												{post[keyed]?.title || ''}
 											</h2>
 											<p className="text-sm text-gray-400 mb-4">
@@ -136,6 +136,13 @@ const blo = function Blog() {
 						))
 					))}
 				</div>
+				<div className="mb-8">
+                        <a href="https://rohithkattamuri.hashnode.dev" target="_blank" rel="noopener noreferrer">
+                            <button className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-lg px-6 py-3 rounded-full hover:from-blue-600 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                                Visit My Blog Corner
+                            </button>
+                        </a>
+			</div>
 			</div>
 		</Layout.Default>
 
