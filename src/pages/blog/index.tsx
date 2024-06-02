@@ -111,42 +111,83 @@ const blo = function Blog() {
 	// </Layout.Default>
 
 
-	return (
-		<Layout.Default seo={{ title: 'a blog by rohith' }} >
-			<div className="container px-5 py-24 mx-auto">
-				<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
-					{posts?.map((post, kkk) => (
-						Object.keys(post).map((keyed, i) => (
-							<div className="p-4 md:w-1/3" key={i}>
-								<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
-									<div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transform transition-all hover:scale-110">
-										<div className="p-4 rounded-lg" style={{ backgroundColor: 'transparent', border: 'none !important' }}>
-											<h2 className="text-xl font-bold text-blue-500 mb-2">
-												{post[keyed]?.title || ''}
-											</h2>
-											<p className="text-sm text-gray-400 mb-4">
-												{post[keyed]?.brief || ''}
-											</p>
-											<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="text-blue-500 hover:underline">Read more</a>
-										</div>
+	// return (
+	// 	<Layout.Default seo={{ title: 'a blog by rohith' }} >
+	// 		<div className="container px-5 py-24 mx-auto">
+	// 			<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
+	// 				{posts?.map((post, kkk) => (
+	// 					Object.keys(post).map((keyed, i) => (
+	// 						<div className="p-4 md:w-1/3" key={i}>
+	// 							<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
+	// 								<div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transform transition-all hover:scale-110">
+	// 									<div className="p-4 rounded-lg" style={{ backgroundColor: 'transparent', border: 'none !important' }}>
+	// 										<h2 className="text-xl font-bold text-blue-500 mb-2">
+	// 											{post[keyed]?.title || ''}
+	// 										</h2>
+	// 										<p className="text-sm text-gray-400 mb-4">
+	// 											{post[keyed]?.brief || ''}
+	// 										</p>
+	// 										<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="text-blue-500 hover:underline">Read more</a>
+	// 									</div>
 
-									</div>
-								</a>
-							</div>
-						))
-					))}
-				</div>
-			</div>
-			<div className="mb-8">
-                        <a href="https://rohithkattamuri.hashnode.dev" target="_blank" rel="noopener noreferrer">
-                            <button className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-lg px-6 py-3 rounded-full hover:from-blue-600 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                                Visit My Blog Corner
-                            </button>
-                        </a>
-			</div>
-		</Layout.Default>
+	// 								</div>
+	// 							</a>
+	// 						</div>
+	// 					))
+	// 				))}
+	// 			</div>
+	// 		</div>
+	// 		<div className="mb-8">
+    //                     <a href="https://rohithkattamuri.hashnode.dev" target="_blank" rel="noopener noreferrer">
+    //                         <button className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-lg px-6 py-3 rounded-full hover:from-blue-600 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+    //                             Visit My Blog Corner
+    //                         </button>
+    //                     </a>
+	// 		</div>
+	// 	</Layout.Default>
 
+	// )
+	return(
+	<Layout.Default seo={{ title: 'a blog by rohith' }}>
+      <div className="container px-5 py-24 mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-indigo-900 mb-4">Blogs by Rohith</h1>
+          <p className="text-xl text-gray-800">
+            "Blogs are a great way to share knowledge, connect with others, and leave a lasting impact."
+          </p>
+        </div>
+        <div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
+          {posts?.map((post, kkk) =>
+            Object.keys(post).map((keyed, i) => (
+              <div className="p-4 md:w-1/3" key={i}>
+                <a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
+                  <div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transform transition-all hover:scale-110">
+                    <div className="p-4 rounded-lg" style={{ backgroundColor: 'transparent', border: 'none !important' }}>
+                      <h2 className="text-xl font-bold text-blue-500 mb-2">
+                        {post[keyed]?.title || ''}
+                      </h2>
+                      <p className="text-sm text-gray-400 mb-4">
+                        {post[keyed]?.brief || ''}
+                      </p>
+                      <a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="text-blue-500 hover:underline">Read more</a>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            ))
+          )}
+        </div>
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2">
+          <a href="https://rohithkattamuri.hashnode.dev" target="_blank" rel="noopener noreferrer">
+            <button className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-lg px-6 py-3 rounded-full hover:from-blue-600 hover:to-indigo-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+              Visit My Blog Corner
+            </button>
+          </a>
+        </div>
+      </div>
+    </Layout.Default>
 	)
+  
 };
 
 
