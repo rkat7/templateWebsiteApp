@@ -159,11 +159,11 @@ const blo = function Blog() {
 							opacity: [0.2, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-4xl text-gray-685 mb-12" style={{ fontStyle: 'italic' }}
+						className="text-4xl text-gray-685 mb-12" style={{ fontFamily: 'cursive', fontStyle: 'italic' }}
 						transition={{
-							delay: 1.05,
+							delay: 0.75,
 						}}>
-						Engineering - the crème de la crème among the arts
+						A penchant for Engineering
 					</Animate>
 			</div>
 			<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
