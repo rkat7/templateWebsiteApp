@@ -1,6 +1,7 @@
 import { Blog } from '~/components';
 import { getAllPostsFrontMatter } from '~/lib/post';
 import { Layout } from '~/layouts';
+import { Animate, Button, Pill } from '~/components';
 
 import React from "react";
 
@@ -151,6 +152,17 @@ const blo = function Blog() {
 
 	return (
 		<Layout.Default seo={{ title: 'a blog by rohith' }}>
+			<div>
+			<Animate
+						as="h1"
+						animation={{
+							opacity: [0, 1],
+							scale: [0.75, 1],
+						}}
+						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
+						Bleed Code
+					</Animate>
+			</div>
 		  <div className="container px-5 py-24 mx-auto">
 			<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 			  {posts?.map((post, kkk) => (
