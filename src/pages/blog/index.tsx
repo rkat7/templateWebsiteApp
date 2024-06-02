@@ -119,7 +119,7 @@ const blo = function Blog() {
 						Object.keys(post).map((keyed, i) => (
 							<div className="p-4 md:w-1/3" key={i}>
 								<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
-									<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110">
+									<div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transform transition-all hover:scale-110">
 										<div className="p-4 rounded-lg" style={{ backgroundColor: 'transparent', border: 'none !important' }}>
 											<h2 className="text-xl font-bold text-white mb-2">
 												{post[keyed]?.title || ''}
@@ -158,3 +158,5 @@ export default blo;
 											</p>
 										</div>
 */ 
+
+//<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110"></div>
