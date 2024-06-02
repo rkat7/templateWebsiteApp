@@ -59,57 +59,7 @@ const blo = function Blog() {
 		const result = await response.json();
 		setPosts(result.data.publication.posts.edges);
 	};
-	// return (
-	// 	<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
-	// 		{posts?.map((post, index) => {
-	// 			const { slug, title, brief, coverImage } = post;
-
-	// 			return (
-	// 				<div className="p-4 md:w-1/3" key={index}>
-	// 					<a
-	// 						href={`https://blog.developerdao.com/${slug}`}
-	// 						className="block"
-	// 						target="_blank"
-	// 						rel="noopener noreferrer"
-	// 					>
-	// 						<div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transform transition-all hover:scale-110 ">
-	// 							<Image
-	// 								className="lg:h-48 md:h-36 w-full object-cover object-center"
-	// 								src={coverImage?.url}
-	// 								alt={title}
-	// 								width={250}
-	// 								height={250}
-	// 							/>
-	// 							<div className="p-6">
-	// 								<h1 className="title-font text-lg font-medium text-gray-300 mb-3">
-	// 									{title}
-	// 								</h1>
-	// 								<p className="leading-relaxed text-gray-500 mb-3">
-	// 									{brief}
-	// 								</p>
-	// 							</div>
-	// 						</div>
-	// 					</a>
-	// 				</div>
-	// 			);
-	// 		})}
-	// 	</div>
-	// );
-
-
-	// return (
-	// <Layout.Default seo={{ title: 'nuro ─ blog' }}>
-	// 	<div className="mt-8 sm:mt-16 mb-20 mx-0 sm:mx-6 lg:mb-28 lg:mx-8">
-	// 		<div className="relative max-w-6xl mx-auto">
-	// 			{/* <Blog.Latest frontmatter={latestPost} /> */}
-	// 			<div className="mt-4 lg:mt-12 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-none">
-	// 				{posts.map((frontmatter, i) => (
-	// 					<Blog.Post key={i} frontmatter={frontmatter} index={i} />
-	// 				))}
-	// 			</div>
-	// 		</div>
-	// 	</div>
-	// </Layout.Default>
+	
 
 
 	// return (
@@ -152,18 +102,21 @@ const blo = function Blog() {
 
 	return (
 		<Layout.Default seo={{ title: 'a blog by rohith' }}>
-			<div>
-			<Animate
+		  <div className="container px-5 py-24 mx-auto">
+		  <div className="text-center mb-12">
+		  <Animate
 						as="h1"
 						animation={{
 							opacity: [0, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
+						className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-indigo-900 sm:text-lg md:text-xl md:max-w-3xl"
+						transition={{
+							delay: 0.5,
+						}}>
 						Bleed Code
 					</Animate>
-			</div>
-		  <div className="container px-5 py-24 mx-auto">
+      </div>
 			<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
 			  {posts?.map((post, kkk) => (
 				Object.keys(post).map((keyed, i) => (
