@@ -161,7 +161,7 @@ const blo = function Blog() {
 						}}
 						className="text-4xl text-gray-685 mb-12" style={{ fontFamily: 'cursive', fontStyle: 'italic' }}
 						transition={{
-							delay: 0.75,
+							delay: 0.45,
 						}}>
 						A penchant for Engineering
 					</Animate>
