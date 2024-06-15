@@ -17,6 +17,12 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 		},
 		{
 			type: NavigationItemType.LINK,
+			icon: 'feather:smile',
+			text: 'About me',
+			href: '/about-me',
+		},
+		{
+			type: NavigationItemType.LINK,
 			icon: 'feather:clock',
 			text: 'Timeline',
 			href: '/timeline',

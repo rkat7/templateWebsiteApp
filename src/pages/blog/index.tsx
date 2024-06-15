@@ -27,7 +27,7 @@ const blo = function Blog() {
 	// just change the username to yours and you are good to go
 	const query = `
 	query Publication {
-		publication(host: "blog.developerdao.com") {
+		publication(host: "rohithkattamuri.hashnode.dev") {
 		  title
 		  posts(first: 9) {
 			edges {
@@ -170,7 +170,7 @@ const blo = function Blog() {
 			  {posts?.map((post, kkk) => (
 				Object.keys(post).map((keyed, i) => (
 				  <div className="p-4 md:w-1/3" key={i}>
-					<a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
+					<a href={`https://rohithkattamuri.hashnode.dev/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
 					  <div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transform transition-all hover:scale-110">
 						<div className="p-4 rounded-lg" style={{ backgroundColor: 'transparent', border: 'none !important' }}>
 						  <h2 className="text-xl font-bold text-blue-500 mb-2">
@@ -179,7 +179,7 @@ const blo = function Blog() {
 						  <p className="text-sm text-gray-400 mb-4">
 							{post[keyed]?.brief || ''}
 						  </p>
-						  <a href={`https://blog.developerdao.com/${post[keyed].slug || ''}`} className="text-blue-500 hover:underline">Read more</a>
+						  <a href={`https://rohithkattamuri.hashnode.dev/${post[keyed].slug || ''}`} className="text-blue-500 hover:underline">Read more</a>
 						</div>
 					  </div>
 					</a>
