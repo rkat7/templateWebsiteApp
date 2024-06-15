@@ -15,12 +15,12 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			text: 'Home',
 			href: '/',
 		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:smile',
-			text: 'About me',
-			href: '/about-me',
-		},
+		// {
+		// 	type: NavigationItemType.LINK,
+		// 	icon: 'feather:smile',
+		// 	text: 'About me',
+		// 	href: '/about-me',
+		// },
 		{
 			type: NavigationItemType.LINK,
 			icon: 'feather:clock',
