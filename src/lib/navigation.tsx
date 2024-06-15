@@ -15,6 +15,12 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			text: 'Home',
 			href: '/',
 		},
+		// {
+		// 	type: NavigationItemType.LINK,
+		// 	icon: 'feather:smile',
+		// 	text: 'About me',
+		// 	href: '/about-me',
+		// },
 		{
 			type: NavigationItemType.LINK,
 			icon: 'feather:clock',
@@ -50,9 +56,9 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 		},
 		{
 			type: NavigationItemType.LINK,
-			icon: 'feather:bar-chart-2',
-			text: 'Codeforces',
-			href: 'https://codeforces.com/profile/rkat7',
+			icon: 'feather:code',
+			text: 'Leetcode',
+			href: 'https://leetcode.com/u/rkat7/',
 			external: true,
 		},
 		{
@@ -60,6 +66,13 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			icon: 'feather:layers',
 			text: 'Stack Overflow',
 			href: 'https://stackoverflow.com/users/22046747/rohith-k',
+			external: true,
+		},
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:bar-chart-2',
+			text: 'Codeforces',
+			href: 'https://codeforces.com/profile/rkat7',
 			external: true,
 		},
 
