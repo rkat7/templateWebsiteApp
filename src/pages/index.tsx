@@ -19,7 +19,7 @@ const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://blog-template-three.vercel.app/',
+		href: 'https://rohithkattamuri.me/blog',
 		icon: <Icon className="mr-3" icon="feather:edit-3" />,
 		text: 'Blog',
 	},

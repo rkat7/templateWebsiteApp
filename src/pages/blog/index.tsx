@@ -159,7 +159,7 @@ const blo = function Blog() {
 							opacity: [0.2, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-4xl text-gray-685 mb-12" style={{ fontFamily: 'cursive', fontStyle: 'italic' }}
+						className="text-4xl text-gray-685 mb-12" style={{ fontStyle: 'italic' }}
 						transition={{
 							delay: 0.45,
 						}}>
