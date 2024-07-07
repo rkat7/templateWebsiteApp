@@ -19,7 +19,7 @@ const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://rohithkattamuri.me/blog',
+		href: 'https://rohithkattamuri.hashnode.dev/',
 		icon: <Icon className="mr-3" icon="feather:edit-3" />,
 		text: 'Blog',
 	},
