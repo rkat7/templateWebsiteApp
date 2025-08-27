@@ -21,39 +21,85 @@ interface BlogProps {
 const blo = function Blog() {
 	// Added schema of Api querry to get the data from hashnode.
 	const [posts, setPosts] = useState<Edge[]>([]);
-	// just change the username to yours and you are good to go
+	// Updated query to match current Hashnode API format
 	const query = `
 	query Publication {
 		publication(host: "rohithkattamuri.hashnode.dev") {
-		  title
-		  posts(first: 9) {
-			edges {
-			  node {
-				slug
-				title
-				brief
-				url
-				coverImage {
-				  url
+			title
+			posts(first: 9) {
+				edges {
+					node {
+						slug
+						title
+						brief
+						url
+						coverImage {
+							url
+						}
+					}
 				}
-			  }
 			}
-		  }
 		}
-	  }`;
+	}`;
 
 	useEffect(() => {
 		fetchPosts();
+		
+		// Add a global function to test the API from the browser console
+		(window as any).testHashnodeAPI = async () => {
+			try {
+				const testQuery = `
+				query Publication {
+					publication(host: "rohithkattamuri.hashnode.dev") {
+						title
+						posts(first: 3) {
+							edges {
+								node {
+									slug
+									title
+									brief
+								}
+							}
+						}
+					}
+				}`;
+				
+				const response = await fetch("https://gql.hashnode.com/", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ query: testQuery }),
+				});
+				
+				const result = await response.json();
+				console.log("Test API Response:", result);
+				return result;
+			} catch (error) {
+				console.error("Test API Error:", error);
+				return error;
+			}
+		};
+		
+		console.log("You can test the Hashnode API by running: window.testHashnodeAPI()");
 	}, []);
+	
 	const fetchPosts = async () => {
 		try {
-			const response = await fetch("https://gql.hashnode.com", {
+			console.log("Fetching posts from Hashnode...");
+			const response = await fetch("https://gql.hashnode.com/", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({ query }),
 			});
+			
+			if (!response.ok) {
+				console.error("API response not OK:", response.status, response.statusText);
+				return;
+			}
+			
 			const result = await response.json();
 			console.log("Hashnode API Response:", result);
 			
@@ -63,9 +109,66 @@ const blo = function Blog() {
 				setPosts(edges);
 			} else {
 				console.error("Invalid response structure:", result);
+				// Check for errors in the response
+				if (result.errors) {
+					console.error("API errors:", result.errors);
+					// Try fallback approach using publication ID
+					await fetchPostsByPublicationId();
+				}
 			}
 		} catch (error) {
 			console.error("Error fetching posts:", error);
+			// Try fallback approach
+			await fetchPostsByPublicationId();
+		}
+	};
+	
+	// Fallback function to fetch posts by publication ID
+	const fetchPostsByPublicationId = async () => {
+		try {
+			console.log("Trying fallback: Fetching posts by publication ID...");
+			// You may need to find your publication ID from the Hashnode dashboard
+			// The URL format is typically: https://hashnode.com/dashboard/publications/YOUR_PUBLICATION_ID
+			const fallbackQuery = `
+			query Publication {
+				publication(id: "YOUR_PUBLICATION_ID_HERE") {
+					title
+					posts(first: 9) {
+						edges {
+							node {
+								slug
+								title
+								brief
+								url
+								coverImage {
+									url
+								}
+							}
+						}
+					}
+				}
+			}`;
+			
+			const response = await fetch("https://gql.hashnode.com/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ query: fallbackQuery }),
+			});
+			
+			const result = await response.json();
+			console.log("Fallback API Response:", result);
+			
+			if (result.data && result.data.publication && result.data.publication.posts && result.data.publication.posts.edges) {
+				const edges = result.data.publication.posts.edges;
+				console.log("Fallback posts edges:", edges);
+				setPosts(edges);
+			} else {
+				console.error("Fallback also failed:", result);
+			}
+		} catch (error) {
+			console.error("Error in fallback fetch:", error);
 		}
 	};
 	
