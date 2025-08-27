@@ -8,8 +8,7 @@ import React from "react";
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import { Hashnode } from '~/components/hashnode.types';
-
+import type { Edge, Node } from '~/components/hashnode.types';
 
 import type { GetStaticProps } from 'next';
 
@@ -19,45 +18,158 @@ interface BlogProps {
 	serialisedFrontmatters: string;
 }
 
-
-
 const blo = function Blog() {
 	// Added schema of Api querry to get the data from hashnode.
-	const [posts, setPosts] = useState<Hashnode['public']['Tables']['blog']['Row'][]>([]);
-	// just change the username to yours and you are good to go
+	const [posts, setPosts] = useState<Edge[]>([]);
+	// Updated query to match current Hashnode API format
 	const query = `
 	query Publication {
 		publication(host: "rohithkattamuri.hashnode.dev") {
-		  title
-		  posts(first: 9) {
-			edges {
-			  node {
-				slug
-				title
-				brief
-				url
-				coverImage {
-				  url
+			title
+			posts(first: 9) {
+				edges {
+					node {
+						slug
+						title
+						brief
+						url
+						coverImage {
+							url
+						}
+					}
 				}
-			  }
 			}
-		  }
 		}
-	  }`;
+	}`;
 
 	useEffect(() => {
 		fetchPosts();
+		
+		// Add a global function to test the API from the browser console
+		(window as any).testHashnodeAPI = async () => {
+			try {
+				const testQuery = `
+				query Publication {
+					publication(host: "rohithkattamuri.hashnode.dev") {
+						title
+						posts(first: 3) {
+							edges {
+								node {
+									slug
+									title
+									brief
+								}
+							}
+						}
+					}
+				}`;
+				
+				const response = await fetch("https://gql.hashnode.com/", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ query: testQuery }),
+				});
+				
+				const result = await response.json();
+				console.log("Test API Response:", result);
+				return result;
+			} catch (error) {
+				console.error("Test API Error:", error);
+				return error;
+			}
+		};
+		
+		console.log("You can test the Hashnode API by running: window.testHashnodeAPI()");
 	}, []);
+	
 	const fetchPosts = async () => {
-		const response = await fetch("https://gql.hashnode.com", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ query }),
-		});
-		const result = await response.json();
-		setPosts(result.data.publication.posts.edges);
+		try {
+			console.log("Fetching posts from Hashnode...");
+			const response = await fetch("https://gql.hashnode.com/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ query }),
+			});
+			
+			if (!response.ok) {
+				console.error("API response not OK:", response.status, response.statusText);
+				return;
+			}
+			
+			const result = await response.json();
+			console.log("Hashnode API Response:", result);
+			
+			if (result.data && result.data.publication && result.data.publication.posts && result.data.publication.posts.edges) {
+				const edges = result.data.publication.posts.edges;
+				console.log("Posts edges:", edges);
+				setPosts(edges);
+			} else {
+				console.error("Invalid response structure:", result);
+				// Check for errors in the response
+				if (result.errors) {
+					console.error("API errors:", result.errors);
+					// Try fallback approach using publication ID
+					await fetchPostsByPublicationId();
+				}
+			}
+		} catch (error) {
+			console.error("Error fetching posts:", error);
+			// Try fallback approach
+			await fetchPostsByPublicationId();
+		}
+	};
+	
+	// Fallback function to fetch posts by publication ID
+	const fetchPostsByPublicationId = async () => {
+		try {
+			console.log("Trying fallback: Fetching posts by publication ID...");
+			// You may need to find your publication ID from the Hashnode dashboard
+			// The URL format is typically: https://hashnode.com/dashboard/publications/YOUR_PUBLICATION_ID
+			const fallbackQuery = `
+			query Publication {
+				publication(id: "YOUR_PUBLICATION_ID_HERE") {
+					title
+					posts(first: 9) {
+						edges {
+							node {
+								slug
+								title
+								brief
+								url
+								coverImage {
+									url
+								}
+							}
+						}
+					}
+				}
+			}`;
+			
+			const response = await fetch("https://gql.hashnode.com/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ query: fallbackQuery }),
+			});
+			
+			const result = await response.json();
+			console.log("Fallback API Response:", result);
+			
+			if (result.data && result.data.publication && result.data.publication.posts && result.data.publication.posts.edges) {
+				const edges = result.data.publication.posts.edges;
+				console.log("Fallback posts edges:", edges);
+				setPosts(edges);
+			} else {
+				console.error("Fallback also failed:", result);
+			}
+		} catch (error) {
+			console.error("Error in fallback fetch:", error);
+		}
 	};
 	
 
@@ -161,31 +273,39 @@ const blo = function Blog() {
 						}}
 						className="text-4xl text-gray-685 mb-12" style={{ fontStyle: 'italic' }}
 						transition={{
-							delay: 0.45,
+							delay: 0.41,
 						}}>
 						A penchant for Engineering
 					</Animate>
 			</div>
 			<div className="flex flex-wrap -m-4 justify-center whitespace-break-spaces">
-			  {posts?.map((post, kkk) => (
-				Object.keys(post).map((keyed, i) => (
-				  <div className="p-4 md:w-1/3" key={i}>
-					<a href={`https://rohithkattamuri.hashnode.dev/${post[keyed].slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
-					  <div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transform transition-all hover:scale-110">
-						<div className="p-4 rounded-lg" style={{ backgroundColor: 'transparent', border: 'none !important' }}>
-						  <h2 className="text-xl font-bold text-blue-500 mb-2">
-							{post[keyed]?.title || ''}
-						  </h2>
-						  <p className="text-sm text-gray-400 mb-4">
-							{post[keyed]?.brief || ''}
-						  </p>
-						  <a href={`https://rohithkattamuri.hashnode.dev/${post[keyed].slug || ''}`} className="text-blue-500 hover:underline">Read more</a>
+			  {posts && posts.length > 0 ? (
+				posts.map((edge, index) => {
+					const post = edge.node;
+					console.log("Post data:", post);
+					return (
+						<div className="p-4 md:w-1/3" key={index}>
+							<a href={`https://rohithkattamuri.hashnode.dev/${post.slug || ''}`} className="block" target="_blank" rel="noopener noreferrer">
+							<div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden transform transition-all hover:scale-110">
+								<div className="p-4 rounded-lg" style={{ backgroundColor: 'transparent', border: 'none !important' }}>
+								<h2 className="text-xl font-bold text-blue-500 mb-2">
+									{post.title || ''}
+								</h2>
+								<p className="text-sm text-gray-400 mb-4">
+									{post.brief || ''}
+								</p>
+								<a href={`https://rohithkattamuri.hashnode.dev/${post.slug || ''}`} className="text-blue-500 hover:underline">Read more</a>
+								</div>
+							</div>
+							</a>
 						</div>
-					  </div>
-					</a>
-				  </div>
-				))
-			  ))}
+					);
+				})
+			  ) : (
+				<div className="text-center w-full">
+					<p className="text-gray-500">No blog posts found. Please check the console for any errors.</p>
+				</div>
+			  )}
 			</div>
 		  </div>
 		  <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2">
