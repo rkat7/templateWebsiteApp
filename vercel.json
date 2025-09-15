@@ -4,14 +4,34 @@
 	"alias": "rohithkattamuri.me",
 	"cleanUrls": true,
 	"public": true,
-	"regions": ["lhr1"],
+	"regions": [
+		"lhr1"
+	],
 	"redirects": [
-		{ "source": "/cv", "destination": "https://read.cv/nuro" },
-		{ "source": "/github", "destination": "https://github.com/nurodev" },
-		{ "source": "/linkedin", "destination": "https://www.linkedin.com/in/rohithkattamuri-profile" },
-		{ "source": "/portfolio", "destination": "/projects" },
-		{ "source": "/resume", "destination": "https://read.cv/nuro" },
-		{ "source": "/twitter", "destination": "https://twitter.com/nurodev" },
+		{
+			"source": "/cv",
+			"destination": "https://read.cv/nuro"
+		},
+		{
+			"source": "/github",
+			"destination": "https://github.com/nurodev"
+		},
+		{
+			"source": "/linkedin",
+			"destination": "https://www.linkedin.com/in/rkat7"
+		},
+		{
+			"source": "/portfolio",
+			"destination": "/projects"
+		},
+		{
+			"source": "/resume",
+			"destination": "https://read.cv/nuro"
+		},
+		{
+			"source": "/twitter",
+			"destination": "https://twitter.com/nurodev"
+		},
 		{
 			"source": "/contact",
 			"destination": "https://twitter.com/direct_messages/create/nurodev"

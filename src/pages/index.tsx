@@ -26,7 +26,7 @@ const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://www.linkedin.com/in/rohithkattamuri-profile/',
+		href: 'https://www.linkedin.com/in/rkat7/',
 		icon: <Icon className="mr-3" icon="feather:linkedin" />,
 		text: 'Linkedin',
 	},
