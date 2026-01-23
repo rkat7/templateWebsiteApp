@@ -29,7 +29,10 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps): 
 	const timeline = rawTimeline.map((event) => ({
 		...event,
 		// Note: Custom parser needed as Safari on iOS doesn't like the standard `new Date()` parsing
-		date: parse(event.date.toString(), 'MM-dd-yyyy', new Date()),
+		// Supports both 'MM-dd-yyyy' and 'MM-yyyy' formats
+		date: event.date.toString().split('-').length === 3
+			? parse(event.date.toString(), 'MM-dd-yyyy', new Date())
+			: parse(event.date.toString(), 'MM-yyyy', new Date()),
 	}));
 
 	return (

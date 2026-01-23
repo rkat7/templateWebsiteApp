@@ -1,6 +1,22 @@
 [
 	{
-		"date": "05-20-2025",
+		"date": "01-2026",
+		"title": "Joined Anyscale",
+		"description": "Started as Member of Technical Staff at Anyscale in San Francisco",
+		"icon": "feather:cpu",
+		"link": {
+			"text": "Anyscale",
+			"url": "https://www.anyscale.com/"
+		}
+	},
+	{
+		"date": "12-2025",
+		"title": "Graduated from UIUC!",
+		"description": "Successfully completed Master's in Computer Science at UIUC",
+		"icon": "feather:award"
+	},
+	{
+		"date": "05-2025",
 		"title": "Stepped into the Silicon Valley",
 		"description": "SDE Intern at Amazon AGI working on Nova",
 		"icon": "feather:zap",
@@ -10,7 +26,7 @@
 		}
 	},
 	{
-		"date": "08-26-2024",
+		"date": "08-2024",
 		"title": "Master's in CS",
 		"description": "Pursuing Master's in CS at the UIUC",
 		"icon": "feather:chevrons-up"
