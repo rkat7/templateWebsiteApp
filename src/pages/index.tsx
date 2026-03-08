@@ -30,6 +30,13 @@ const ACTIONS: Array<NavigationItem> = [
 		icon: <Icon className="mr-3" icon="feather:linkedin" />,
 		text: 'Linkedin',
 	},
+	{
+		type: NavigationItemType.LINK,
+		external: true,
+		href: 'https://www.instagram.com/truce.with.a.muse/',
+		icon: <Icon className="mr-3" icon="feather:instagram" />,
+		text: 'Instagram',
+	},
 	// {
 	// 	type: NavigationItemType.LINK,
 	// 	external: true,
