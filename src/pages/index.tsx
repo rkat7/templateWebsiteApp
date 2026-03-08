@@ -35,7 +35,7 @@ const ACTIONS: Array<NavigationItem> = [
 		external: true,
 		href: 'https://www.instagram.com/truce.with.a.muse/',
 		icon: <Icon className="mr-3" icon="feather:instagram" />,
-		text: 'Instagram',
+		text: 'Jibber-Jabber',
 	},
 	// {
 	// 	type: NavigationItemType.LINK,
